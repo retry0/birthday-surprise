@@ -10,30 +10,6 @@ function checkPassword() {
     }
 }
 
-/* COUNTDOWN */
-const targetDate = new Date("2025-12-19T00:00:00"); // 🔁 GANTI
-
-function updateCountdown() {
-    const now = new Date();
-    const diff = targetDate - now;
-    const el = document.getElementById("countdown");
-
-    if (!el) return;
-
-    if (diff <= 0) {
-        el.innerHTML = "🎉 Hari spesial kita sudah tiba 💖";
-        return;
-    }
-
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
-
-    el.innerHTML = `⏳ ${d} hari ${h} jam ${m} menit lagi`;
-}
-setInterval(updateCountdown, 60000);
-updateCountdown();
-
 /* TYPING */
 const message = `
 Di hari istimewa ini,
