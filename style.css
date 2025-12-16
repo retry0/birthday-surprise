@@ -1,3 +1,4 @@
+/* ================= GLOBAL ================= */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -5,7 +6,7 @@ body {
   min-height: 100vh;
 }
 
-/* LOCK */
+/* ================= PASSWORD PAGE ================= */
 .lock-page {
   display: flex;
   justify-content: center;
@@ -22,7 +23,9 @@ body {
   max-width: 380px;
 }
 
-.lock-box h1 { color: #ff6fae; }
+.lock-box h1 {
+  color: #ff6fae;
+}
 
 .lock-box input {
   width: 100%;
@@ -38,6 +41,7 @@ body {
   color: white;
   padding: 14px 28px;
   border-radius: 25px;
+  cursor: pointer;
 }
 
 #error {
@@ -45,7 +49,7 @@ body {
   color: #ff4d6d;
 }
 
-/* CARD */
+/* ================= CARD (STAGE ONE) ================= */
 .card {
   background: white;
   max-width: 520px;
@@ -66,6 +70,7 @@ body {
   font-weight: 400;
 }
 
+/* ================= TEXT ================= */
 .text {
   font-size: 15px;
   color: #555;
@@ -73,7 +78,7 @@ body {
   white-space: pre-line;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 button {
   background: #ff85c1;
   border: none;
@@ -84,90 +89,11 @@ button {
   margin: 10px 0;
 }
 
-#startBtn { background: #ff6fae; }
-
-/* MEMORY */
-.photos {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 14px;
+#startBtn {
+  background: #ff6fae;
 }
-
-.photos img {
-  width: 90px;
-  height: 90px;
-  border-radius: 20px;
-  object-fit: cover;
-}
-
-.photos figcaption {
-  font-size: 12px;
-  color: #ff6fae;
-  margin-top: 6px;
-  opacity: 0;
-  transition: opacity 1.5s ease;
-}
-
-.memory {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 1.5s ease;
-}
-
-.memory.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.memory.show figcaption {
-  opacity: 1;
-}
-
-/* IMPORTANT: NO display:none */
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* STAGE TWO */
-.stage-two {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, #ffe0ec, #fff7fa);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px;
-  animation: fadeIn 2s ease;
-}
-
-.stage-two h1 { color: #ff6fae; }
-
-.stage-two p {
-  color: #555;
-  line-height: 1.8;
-  max-width: 420px;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* HEART */
-@keyframes floatUp {
-  to {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
-}
-
 
 /* ================= MEMORY GRID ================= */
-
 /* DEFAULT = MOBILE (2 KOLOM) */
 .photos {
   margin-top: 25px;
@@ -195,7 +121,7 @@ button {
   transition: all 1.5s ease;
 }
 
-/* SAAT MUNCUL */
+/* MEMORY MUNCUL */
 .memory.show {
   opacity: 1;
   transform: scale(1);
@@ -222,7 +148,7 @@ button {
   pointer-events: none;
 }
 
-/* ================= DESKTOP (3 KOLOM) ================= */
+/* ================= DESKTOP MEMORY (3 KOLOM) ================= */
 @media (min-width: 768px) {
   .photos {
     grid-template-columns: repeat(3, 1fr);
@@ -237,5 +163,44 @@ button {
   .photos figcaption {
     font-size: 13px;
     max-width: 100px;
+  }
+}
+
+/* ================= STAGE TWO ================= */
+.stage-two {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffe0ec, #fff7fa);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  animation: fadeIn 2s ease;
+  z-index: 10;
+}
+
+.stage-two h1 {
+  color: #ff6fae;
+  margin-bottom: 20px;
+}
+
+.stage-two p {
+  color: #555;
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
   }
 }
