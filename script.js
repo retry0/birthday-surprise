@@ -1,7 +1,7 @@
-/* PASSWORD */
+/* ================= PASSWORD ================= */
 function checkPassword() {
     const input = document.getElementById("password").value;
-    const birthday = "19121997"; // GANTI
+    const birthday = "19121997"; // 🔁 GANTI
 
     if (input === birthday) {
         window.location.href = "surprise.html";
@@ -10,7 +10,7 @@ function checkPassword() {
     }
 }
 
-/* TYPING */
+/* ================= TYPING ================= */
 const message = `
 Di hari istimewa ini,
 aku ingin kamu tahu satu hal…
@@ -37,12 +37,12 @@ function typeEffect() {
         i++;
         setTimeout(typeEffect, 60);
     } else {
-        playMemoriesFullscreen();
+        playMemories();
     }
 }
 
-/* MEMORY FULLSCREEN */
-function playMemoriesFullscreen() {
+/* ================= MEMORY FRAME FULLSCREEN ================= */
+function playMemories() {
     const memories = document.querySelectorAll(".memory");
     const viewer = document.getElementById("photoViewer");
     const img = document.getElementById("viewerImg");
@@ -52,12 +52,13 @@ function playMemoriesFullscreen() {
 
     function showNext() {
         if (index >= memories.length) {
-            setTimeout(showStageTwo, 3000);
+            setTimeout(showStageTwo, 2500);
             return;
         }
 
         img.src = memories[index].querySelector("img").src;
-        caption.innerText = memories[index].querySelector("figcaption").innerText;
+        caption.innerText =
+            memories[index].querySelector("figcaption").innerText;
 
         viewer.classList.remove("hidden");
 
@@ -65,18 +66,18 @@ function playMemoriesFullscreen() {
             viewer.classList.add("hidden");
             index++;
             setTimeout(showNext, 700);
-        }, 2200);
+        }, 2300);
     }
 
     showNext();
 }
 
-/* STAGE TWO */
+/* ================= STAGE TWO ================= */
 function showStageTwo() {
     document.getElementById("stageTwo").classList.remove("hidden");
 }
 
-/* START */
+/* ================= START ================= */
 document.addEventListener("DOMContentLoaded", () => {
     const startBtn = document.getElementById("startBtn");
     const music = document.getElementById("music");

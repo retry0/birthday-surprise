@@ -1,4 +1,4 @@
-/* GLOBAL */
+/* ================= GLOBAL ================= */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -6,7 +6,47 @@ body {
   min-height: 100vh;
 }
 
-/* CARD */
+/* ================= PASSWORD ================= */
+.lock-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lock-box {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(255,105,180,0.25);
+  width: 90%;
+  max-width: 380px;
+}
+
+.lock-box h1 { color: #ff6fae; }
+
+.lock-box input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 25px;
+  border: 1px solid #ffc1d9;
+  margin: 15px 0;
+}
+
+.lock-box button {
+  background: #ff6fae;
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 25px;
+}
+
+#error {
+  display: none;
+  color: #ff4d6d;
+}
+
+/* ================= STAGE ONE ================= */
 .card {
   background: white;
   max-width: 520px;
@@ -34,7 +74,7 @@ body {
   white-space: pre-line;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 button {
   background: #ff85c1;
   border: none;
@@ -47,19 +87,18 @@ button {
 
 #startBtn { background: #ff6fae; }
 
-/* FULLSCREEN MEMORY */
+/* ================= FULLSCREEN FRAME MEMORY ================= */
 .photo-viewer {
   position: fixed;
   inset: 0;
-  background: rgba(255, 224, 236, 0.95);
-  backdrop-filter: blur(8px);
+  background: linear-gradient(135deg, #ffe6ee, #ffd6e8);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 20;
-  animation: fadeIn 1s ease;
+  z-index: 30;
+  animation: fadeIn 0.8s ease;
 }
 
 .photo-viewer.hidden {
@@ -67,21 +106,26 @@ button {
 }
 
 .photo-viewer img {
-  max-width: 85%;
-  max-height: 70vh;
-  border-radius: 24px;
-  box-shadow: 0 30px 60px rgba(255,105,180,0.35);
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 28px;
+  background: white;
+  box-shadow:
+    0 25px 50px rgba(255, 105, 180, 0.35),
+    0 0 0 10px rgba(255, 255, 255, 0.75);
 }
 
 .photo-viewer p {
-  margin-top: 20px;
-  font-size: 15px;
+  margin-top: 22px;
+  font-size: 14px;
   color: #ff5fa2;
-  max-width: 80%;
+  max-width: 85%;
   line-height: 1.6;
+  animation: fadeInUp 1.2s ease;
 }
 
-/* STAGE TWO */
+/* ================= STAGE TWO ================= */
 .stage-two {
   position: fixed;
   inset: 0;
@@ -92,16 +136,35 @@ button {
   align-items: center;
   text-align: center;
   padding: 40px;
-  animation: fadeIn 2s ease;
-  z-index: 30;
+  z-index: 40;
+  animation: fadeIn 1.2s ease;
 }
 
 .stage-two.hidden {
   display: none;
 }
 
-/* ANIMATION */
+.stage-two h1 { color: #ff6fae; }
+
+.stage-two p {
+  color: #555;
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+/* ================= ANIMATION ================= */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
