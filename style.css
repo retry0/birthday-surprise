@@ -6,7 +6,7 @@ body {
   overflow: hidden;
 }
 
-/* PASSWORD PAGE */
+/* ================= PASSWORD PAGE ================= */
 .lock-page {
   display: flex;
   justify-content: center;
@@ -45,10 +45,9 @@ body {
 #error {
   display: none;
   color: #ff4d6d;
-  margin-top: 10px;
 }
 
-/* SURPRISE PAGE */
+/* ================= SURPRISE PAGE ================= */
 .card {
   background: white;
   max-width: 420px;
@@ -76,6 +75,7 @@ body {
   color: #555;
   margin: 25px 0;
   line-height: 1.7;
+  white-space: pre-line;
 }
 
 button {
@@ -88,6 +88,7 @@ button {
   font-size: 14px;
 }
 
+/* ================= MEMORY REVEAL ================= */
 .photos {
   margin-top: 25px;
   display: flex;
@@ -95,14 +96,26 @@ button {
   gap: 12px;
 }
 
-.photos img {
+.memory {
   width: 80px;
   height: 80px;
   border-radius: 18px;
   object-fit: cover;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1.5s ease;
 }
 
-/* ANIMASI */
+.memory.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ================= ANIMATIONS ================= */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; }
@@ -119,5 +132,27 @@ button {
   to {
     transform: translateY(-100vh);
     opacity: 0;
+  }
+}
+
+/* ================= MOBILE ONLY ================= */
+.desktop-warning {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  font-size: 16px;
+  color: #ff6fae;
+}
+
+@media (min-width: 768px) {
+  body > * {
+    display: none !important;
+  }
+
+  .desktop-warning {
+    display: flex !important;
   }
 }
