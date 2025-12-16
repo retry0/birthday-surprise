@@ -1,7 +1,7 @@
 /* ================= PASSWORD ================= */
 function checkPassword() {
     const input = document.getElementById("password").value;
-    const birthday = "19121997"; // 🔁 GANTI
+    const birthday = "14021998"; // 🔁 GANTI
 
     if (input === birthday) {
         window.location.href = "surprise.html";
@@ -41,21 +41,41 @@ function typeEffect() {
     }
 }
 
-/* ================= MEMORY + DELAY ================= */
+/* ================= MEMORY + FULLSCREEN ================= */
 function revealMemories() {
     const items = document.querySelectorAll(".memory");
+    const viewer = document.getElementById("photoViewer");
+    const viewerImg = document.getElementById("viewerImg");
+    const viewerCaption = document.getElementById("viewerCaption");
+
     let index = 0;
 
-    const interval = setInterval(() => {
-        if (index < items.length) {
-            items[index].classList.add("show");
-            items[index].classList.remove("hidden");
-            index++;
-        } else {
-            clearInterval(interval);
-            setTimeout(showStageTwo, 3000); // ⏳ delay emosional
+    function showNext() {
+        if (index >= items.length) {
+            setTimeout(showStageTwo, 2500);
+            return;
         }
-    }, 2500);
+
+        // show thumbnail
+        items[index].classList.add("show");
+        items[index].classList.remove("hidden");
+
+        const img = items[index].querySelector("img");
+        const caption = items[index].querySelector("figcaption").innerText;
+
+        // fullscreen
+        viewerImg.src = img.src;
+        viewerCaption.innerText = caption;
+        viewer.classList.remove("hidden");
+
+        setTimeout(() => {
+            viewer.classList.add("hidden");
+            index++;
+            setTimeout(showNext, 600);
+        }, 2000);
+    }
+
+    showNext();
 }
 
 /* ================= STAGE TWO ================= */

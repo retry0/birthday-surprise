@@ -6,7 +6,7 @@ body {
   min-height: 100vh;
 }
 
-/* ================= PASSWORD PAGE ================= */
+/* ================= PASSWORD ================= */
 .lock-page {
   display: flex;
   justify-content: center;
@@ -23,9 +23,7 @@ body {
   max-width: 380px;
 }
 
-.lock-box h1 {
-  color: #ff6fae;
-}
+.lock-box h1 { color: #ff6fae; }
 
 .lock-box input {
   width: 100%;
@@ -48,7 +46,7 @@ body {
   color: #ff4d6d;
 }
 
-/* ================= STAGE ONE ================= */
+/* ================= CARD ================= */
 .card {
   background: white;
   max-width: 520px;
@@ -87,9 +85,7 @@ button {
   margin: 10px 0;
 }
 
-#startBtn {
-  background: #ff6fae;
-}
+#startBtn { background: #ff6fae; }
 
 /* ================= MEMORY GRID ================= */
 .photos {
@@ -135,7 +131,7 @@ button {
   opacity: 1;
 }
 
-/* Hidden for MEMORY only */
+/* Hidden for memory */
 .hidden {
   opacity: 0;
   pointer-events: none;
@@ -163,14 +159,11 @@ button {
   z-index: 10;
 }
 
-/* IMPORTANT: STAGE TWO REALLY HIDDEN */
 .stage-two.hidden {
   display: none;
 }
 
-.stage-two h1 {
-  color: #ff6fae;
-}
+.stage-two h1 { color: #ff6fae; }
 
 .stage-two p {
   color: #555;
@@ -178,10 +171,50 @@ button {
   max-width: 420px;
 }
 
-/* ================= ANIMATION ================= */
+/* ================= FULLSCREEN PHOTO ================= */
+.photo-viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 224, 236, 0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 20;
+  animation: fadeIn 1s ease;
+}
+
+.photo-viewer.hidden {
+  display: none;
+}
+
+.photo-viewer img {
+  max-width: 85%;
+  max-height: 70vh;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(255,105,180,0.35);
+  animation: zoomIn 1.2s ease;
+}
+
+.photo-viewer p {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #ff5fa2;
+  max-width: 80%;
+  line-height: 1.6;
+}
+
+/* ================= ANIMATIONS ================= */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 @keyframes floatUp {
