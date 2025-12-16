@@ -1,7 +1,7 @@
-/* ================= PASSWORD ================= */
+/* PASSWORD */
 function checkPassword() {
     const input = document.getElementById("password").value;
-    const birthday = "14021998"; // 🔁 GANTI
+    const birthday = "19121997"; // GANTI
 
     if (input === birthday) {
         window.location.href = "surprise.html";
@@ -10,7 +10,7 @@ function checkPassword() {
     }
 }
 
-/* ================= TYPING ================= */
+/* TYPING */
 const message = `
 Di hari istimewa ini,
 aku ingin kamu tahu satu hal…
@@ -37,77 +37,53 @@ function typeEffect() {
         i++;
         setTimeout(typeEffect, 60);
     } else {
-        revealMemories();
+        playMemoriesFullscreen();
     }
 }
 
-/* ================= MEMORY + FULLSCREEN ================= */
-function revealMemories() {
-    const items = document.querySelectorAll(".memory");
+/* MEMORY FULLSCREEN */
+function playMemoriesFullscreen() {
+    const memories = document.querySelectorAll(".memory");
     const viewer = document.getElementById("photoViewer");
-    const viewerImg = document.getElementById("viewerImg");
-    const viewerCaption = document.getElementById("viewerCaption");
+    const img = document.getElementById("viewerImg");
+    const caption = document.getElementById("viewerCaption");
 
     let index = 0;
 
     function showNext() {
-        if (index >= items.length) {
-            setTimeout(showStageTwo, 2500);
+        if (index >= memories.length) {
+            setTimeout(showStageTwo, 3000);
             return;
         }
 
-        // show thumbnail
-        items[index].classList.add("show");
-        items[index].classList.remove("hidden");
+        img.src = memories[index].querySelector("img").src;
+        caption.innerText = memories[index].querySelector("figcaption").innerText;
 
-        const img = items[index].querySelector("img");
-        const caption = items[index].querySelector("figcaption").innerText;
-
-        // fullscreen
-        viewerImg.src = img.src;
-        viewerCaption.innerText = caption;
         viewer.classList.remove("hidden");
 
         setTimeout(() => {
             viewer.classList.add("hidden");
             index++;
-            setTimeout(showNext, 600);
-        }, 2000);
+            setTimeout(showNext, 700);
+        }, 2200);
     }
 
     showNext();
 }
 
-/* ================= STAGE TWO ================= */
+/* STAGE TWO */
 function showStageTwo() {
     document.getElementById("stageTwo").classList.remove("hidden");
 }
 
-/* ================= START ================= */
+/* START */
 document.addEventListener("DOMContentLoaded", () => {
     const startBtn = document.getElementById("startBtn");
     const music = document.getElementById("music");
 
-    if (startBtn && music) {
-        startBtn.addEventListener("click", () => {
-            music.play();
-            startBtn.style.display = "none";
-            typeEffect();
-        });
-    }
+    startBtn.addEventListener("click", () => {
+        music.play();
+        startBtn.style.display = "none";
+        typeEffect();
+    });
 });
-
-/* ================= HEART ================= */
-function showLove() {
-    for (let i = 0; i < 25; i++) {
-        const heart = document.createElement("div");
-        heart.innerHTML = "💖";
-        heart.style.position = "fixed";
-        heart.style.bottom = "0";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = "24px";
-        heart.style.animation = "floatUp 4s linear";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 4000);
-    }
-}

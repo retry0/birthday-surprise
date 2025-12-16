@@ -1,4 +1,4 @@
-/* ================= GLOBAL ================= */
+/* GLOBAL */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -6,47 +6,7 @@ body {
   min-height: 100vh;
 }
 
-/* ================= PASSWORD ================= */
-.lock-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.lock-box {
-  background: white;
-  padding: 40px;
-  border-radius: 25px;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(255,105,180,0.25);
-  width: 90%;
-  max-width: 380px;
-}
-
-.lock-box h1 { color: #ff6fae; }
-
-.lock-box input {
-  width: 100%;
-  padding: 14px;
-  border-radius: 25px;
-  border: 1px solid #ffc1d9;
-  margin: 15px 0;
-}
-
-.lock-box button {
-  background: #ff6fae;
-  border: none;
-  color: white;
-  padding: 14px 28px;
-  border-radius: 25px;
-}
-
-#error {
-  display: none;
-  color: #ff4d6d;
-}
-
-/* ================= CARD ================= */
+/* CARD */
 .card {
   background: white;
   max-width: 520px;
@@ -74,7 +34,7 @@ body {
   white-space: pre-line;
 }
 
-/* ================= BUTTON ================= */
+/* BUTTON */
 button {
   background: #ff85c1;
   border: none;
@@ -87,91 +47,7 @@ button {
 
 #startBtn { background: #ff6fae; }
 
-/* ================= MEMORY GRID ================= */
-.photos {
-  margin-top: 25px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  justify-items: center;
-}
-
-.photos img {
-  width: 80px;
-  height: 80px;
-  border-radius: 18px;
-  object-fit: cover;
-}
-
-.memory {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 1.5s ease;
-}
-
-.memory.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.photos figcaption {
-  font-size: 12px;
-  color: #ff6fae;
-  margin-top: 6px;
-  text-align: center;
-  max-width: 90px;
-  opacity: 0;
-  transition: opacity 1.5s ease;
-}
-
-.memory.show figcaption {
-  opacity: 1;
-}
-
-/* Hidden for memory */
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Desktop grid */
-@media (min-width: 768px) {
-  .photos {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ================= STAGE TWO ================= */
-.stage-two {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, #ffe0ec, #fff7fa);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px;
-  animation: fadeIn 2s ease;
-  z-index: 10;
-}
-
-.stage-two.hidden {
-  display: none;
-}
-
-.stage-two h1 { color: #ff6fae; }
-
-.stage-two p {
-  color: #555;
-  line-height: 1.8;
-  max-width: 420px;
-}
-
-/* ================= FULLSCREEN PHOTO ================= */
+/* FULLSCREEN MEMORY */
 .photo-viewer {
   position: fixed;
   inset: 0;
@@ -195,7 +71,6 @@ button {
   max-height: 70vh;
   border-radius: 24px;
   box-shadow: 0 30px 60px rgba(255,105,180,0.35);
-  animation: zoomIn 1.2s ease;
 }
 
 .photo-viewer p {
@@ -206,20 +81,27 @@ button {
   line-height: 1.6;
 }
 
-/* ================= ANIMATIONS ================= */
+/* STAGE TWO */
+.stage-two {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffe0ec, #fff7fa);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  animation: fadeIn 2s ease;
+  z-index: 30;
+}
+
+.stage-two.hidden {
+  display: none;
+}
+
+/* ANIMATION */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-@keyframes zoomIn {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes floatUp {
-  to {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
 }
