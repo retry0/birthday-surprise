@@ -9,26 +9,63 @@
 </head>
 <body>
 
-<audio autoplay loop>
+<audio id="music" loop>
   <source src="assets/music.mp3">
 </audio>
 
 <div class="card">
+
+  <!-- COUNTDOWN -->
+  <div id="countdown" class="countdown"></div>
+
+  <!-- START -->
+  <button id="startBtn">Mulai Surprise 💖</button>
+
   <h1>Happy Birthday 🎂</h1>
   <h2>My Favorite Person 💕</h2>
 
+  <!-- TYPING -->
   <p class="text" id="typing"></p>
 
   <button onclick="showLove()">I Love You 💘</button>
 
+  <!-- MEMORY -->
   <div class="photos">
-    <img src="assets/1.jpg" class="memory hidden">
-    <img src="assets/2.jpg" class="memory hidden">
-    <img src="assets/3.jpg" class="memory hidden">
-        <img src="assets/4.jpg" class="memory hidden">
-    <img src="assets/5.jpg" class="memory hidden">
+    <figure class="memory hidden">
+      <img src="assets/1.jpg">
+      <figcaption>Hari kita makan sushi, maaf belum bisa makan kappa sushi :) 💕</figcaption>
+    </figure>
 
+    <figure class="memory hidden">
+      <img src="assets/2.jpg">
+      <figcaption>Salah satu momen paling aku ingat 🥰 dan mengenalkan kamu ke keluarga</figcaption>
+    </figure>
+
+    <figure class="memory hidden">
+      <img src="assets/3.jpg">
+      <figcaption>Senyum favoritku ✨</figcaption>
+    </figure>
+     <figure class="memory hidden">
+      <img src="assets/4.jpg">
+      <figcaption>Senyum favoritku ✨</figcaption>
+    </figure>
+      <figure class="memory hidden">
+      <img src="assets/5.jpg">
+      <figcaption>Salah satu moment yang lucu ✨</figcaption>
+    </figure>
   </div>
+</div>
+
+<!-- STAGE 2 -->
+<div id="stageTwo" class="stage-two hidden">
+  <h1>💖 One More Thing…</h1>
+  <p>
+    Terima kasih sudah menjadi bagian terindah  
+    dalam hidupku 🌸  
+    Semoga kita bisa terus berjalan bersama  
+    hari demi hari 💍
+  </p>
+  <button onclick="showLove()">Aku Sayang Kamu 💘</button>
 </div>
 
 <script src="script.js"></script>

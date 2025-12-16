@@ -5,7 +5,7 @@ body {
   min-height: 100vh;
 }
 
-/* LOCK PAGE */
+/* LOCK */
 .lock-page {
   display: flex;
   justify-content: center;
@@ -18,8 +18,8 @@ body {
   border-radius: 25px;
   text-align: center;
   box-shadow: 0 20px 40px rgba(255,105,180,0.25);
-  width: 90%;
   max-width: 380px;
+  width: 90%;
 }
 
 .lock-box h1 {
@@ -40,7 +40,6 @@ body {
   color: white;
   padding: 14px 28px;
   border-radius: 25px;
-  cursor: pointer;
 }
 
 #error {
@@ -48,10 +47,10 @@ body {
   color: #ff4d6d;
 }
 
-/* SURPRISE */
+/* CARD */
 .card {
   background: white;
-  max-width: 500px;
+  max-width: 520px;
   margin: 40px auto;
   padding: 40px;
   border-radius: 30px;
@@ -72,11 +71,11 @@ body {
 .text {
   font-size: 15px;
   color: #555;
-  margin: 25px 0;
   line-height: 1.8;
   white-space: pre-line;
 }
 
+/* BUTTON */
 button {
   background: #ff85c1;
   border: none;
@@ -84,6 +83,18 @@ button {
   padding: 14px 30px;
   border-radius: 30px;
   cursor: pointer;
+  margin: 10px 0;
+}
+
+#startBtn {
+  background: #ff6fae;
+}
+
+/* COUNTDOWN */
+.countdown {
+  font-size: 14px;
+  color: #ff6fae;
+  margin-bottom: 15px;
 }
 
 /* MEMORY */
@@ -94,11 +105,22 @@ button {
   gap: 14px;
 }
 
-.memory {
+.photos img {
   width: 90px;
   height: 90px;
   border-radius: 20px;
   object-fit: cover;
+}
+
+.photos figcaption {
+  font-size: 12px;
+  color: #ff6fae;
+  margin-top: 6px;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.memory {
   opacity: 0;
   transform: scale(0.9);
   transition: all 1.5s ease;
@@ -109,25 +131,44 @@ button {
   transform: scale(1);
 }
 
+.memory.show figcaption {
+  opacity: 1;
+}
+
 .hidden {
   display: none;
 }
 
-/* RESPONSIVE */
-@media (min-width: 768px) {
-  .card {
-    max-width: 650px;
-  }
-
-  .memory {
-    width: 120px;
-    height: 120px;
-  }
-
-  .text {
-    font-size: 16px;
-  }
+/* STAGE TWO */
+.stage-two {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffe0ec, #fff7fa);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  animation: fadeIn 2s ease;
 }
+
+.stage-two h1 {
+  color: #ff6fae;
+}
+
+.stage-two p {
+  color: #555;
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* HEART */
 @keyframes floatUp {
   to {
     transform: translateY(-100vh);

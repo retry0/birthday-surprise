@@ -10,7 +10,31 @@ function checkPassword() {
     }
 }
 
-/* TYPING EFFECT */
+/* COUNTDOWN */
+const targetDate = new Date("2025-12-19T00:00:00"); // 🔁 GANTI
+
+function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+    const el = document.getElementById("countdown");
+
+    if (!el) return;
+
+    if (diff <= 0) {
+        el.innerHTML = "🎉 Hari spesial kita sudah tiba 💖";
+        return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+
+    el.innerHTML = `⏳ ${d} hari ${h} jam ${m} menit lagi`;
+}
+setInterval(updateCountdown, 60000);
+updateCountdown();
+
+/* TYPING */
 const message = `
 Di hari istimewa ini,
 aku ingin kamu tahu satu hal…
@@ -27,7 +51,6 @@ dan selamanya 💖
 `;
 
 let i = 0;
-
 function typeEffect() {
     const el = document.getElementById("typing");
     if (!el) return;
@@ -41,25 +64,43 @@ function typeEffect() {
     }
 }
 
-window.onload = typeEffect;
-
-/* MEMORY REVEAL */
+/* MEMORY */
 function revealMemories() {
-    const photos = document.querySelectorAll(".memory");
+    const items = document.querySelectorAll(".memory");
     let index = 0;
 
     const interval = setInterval(() => {
-        if (index < photos.length) {
-            photos[index].classList.remove("hidden");
-            photos[index].classList.add("show");
+        if (index < items.length) {
+            items[index].classList.remove("hidden");
+            items[index].classList.add("show");
             index++;
         } else {
             clearInterval(interval);
+            setTimeout(showStageTwo, 1500);
         }
-    }, 2000);
+    }, 2500);
 }
 
-/* HEART EFFECT */
+/* STAGE 2 */
+function showStageTwo() {
+    document.getElementById("stageTwo").classList.remove("hidden");
+}
+
+/* START */
+document.addEventListener("DOMContentLoaded", () => {
+    const startBtn = document.getElementById("startBtn");
+    const music = document.getElementById("music");
+
+    if (startBtn && music) {
+        startBtn.addEventListener("click", () => {
+            music.play();
+            startBtn.style.display = "none";
+            typeEffect();
+        });
+    }
+});
+
+/* HEART */
 function showLove() {
     for (let i = 0; i < 25; i++) {
         const heart = document.createElement("div");
