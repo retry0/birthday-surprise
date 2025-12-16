@@ -2,38 +2,19 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday My Love 💕</title>
+  <title>Private Love 💌</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="lock-page">
 
-<audio id="music" loop>
-  <source src="assets/music.mp3" type="audio/mpeg">
-</audio>
+<div class="lock-box">
+  <h1>💗 Private Page</h1>
+  <p>Hanya untuk orang spesial</p>
 
-<div class="container">
-  <div class="card">
-    <h1>🎂 Happy Birthday 🎂</h1>
-    <h2>My Lovely Partner 💖</h2>
+  <input type="password" id="password" placeholder="Masukkan password">
+  <button onclick="checkPassword()">Buka Surprise 💕</button>
 
-    <p class="message">
-      Terima kasih sudah hadir di hidupku 💕  
-      Semoga hari ini penuh senyum, cinta, dan kebahagiaan ✨  
-      Aku selalu bersyukur punya kamu 🥰
-    </p>
-
-    <button onclick="startSurprise()">Klik untuk Surprise 🎉</button>
-
-    <div class="gallery">
-      <img src="assets/1.heic">
-      <img src="assets/2.jpg">
-      <img src="assets/3.jpg">
-      <img src="assets/4.jpg">
-      <img src="assets/5.jpg">
-      <img src="assets/6.jpg">
-    </div>
-  </div>
+  <span id="error">Password salah 💔</span>
 </div>
 
 <script src="script.js"></script>

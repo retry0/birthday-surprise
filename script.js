@@ -1,17 +1,19 @@
-function startSurprise() {
-    document.getElementById("music").play();
-    confetti();
+function checkPassword() {
+    const pass = document.getElementById("password").value;
+    if (pass === "sayang") { // GANTI PASSWORD DI SINI
+        window.location.href = "surprise.html";
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
 }
 
-function confetti() {
-    for (let i = 0; i < 30; i++) {
+function showLove() {
+    for (let i = 0; i < 25; i++) {
         const heart = document.createElement("div");
-        heart.innerHTML = "💖";
         heart.className = "heart";
+        heart.innerHTML = "💖";
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = 2 + Math.random() * 3 + "s";
         document.body.appendChild(heart);
-
-        setTimeout(() => heart.remove(), 5000);
+        setTimeout(() => heart.remove(), 4000);
     }
 }
