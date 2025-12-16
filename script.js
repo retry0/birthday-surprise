@@ -1,7 +1,7 @@
-/* ================= PASSWORD ================= */
+/* PASSWORD */
 function checkPassword() {
     const input = document.getElementById("password").value;
-    const birthday = "14021998"; // 🔁 GANTI TANGGAL LAHIR (DDMMYYYY)
+    const birthday = "19121997"; // 🔁 GANTI
 
     if (input === birthday) {
         window.location.href = "surprise.html";
@@ -10,7 +10,7 @@ function checkPassword() {
     }
 }
 
-/* ================= TYPING EFFECT ================= */
+/* TYPING EFFECT */
 const message = `
 Di hari istimewa ini,
 aku ingin kamu tahu satu hal…
@@ -29,11 +29,11 @@ dan selamanya 💖
 let i = 0;
 
 function typeEffect() {
-    const typing = document.getElementById("typing");
-    if (!typing) return;
+    const el = document.getElementById("typing");
+    if (!el) return;
 
     if (i < message.length) {
-        typing.innerHTML += message.charAt(i);
+        el.innerHTML += message.charAt(i);
         i++;
         setTimeout(typeEffect, 60);
     } else {
@@ -43,7 +43,7 @@ function typeEffect() {
 
 window.onload = typeEffect;
 
-/* ================= MEMORY REVEAL ================= */
+/* MEMORY REVEAL */
 function revealMemories() {
     const photos = document.querySelectorAll(".memory");
     let index = 0;
@@ -59,13 +59,16 @@ function revealMemories() {
     }, 2000);
 }
 
-/* ================= HEART EFFECT ================= */
+/* HEART EFFECT */
 function showLove() {
     for (let i = 0; i < 25; i++) {
         const heart = document.createElement("div");
-        heart.className = "heart";
         heart.innerHTML = "💖";
+        heart.style.position = "fixed";
+        heart.style.bottom = "0";
         heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = "24px";
+        heart.style.animation = "floatUp 4s linear";
         document.body.appendChild(heart);
         setTimeout(() => heart.remove(), 4000);
     }
