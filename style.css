@@ -41,7 +41,6 @@ body {
   color: white;
   padding: 14px 28px;
   border-radius: 25px;
-  cursor: pointer;
 }
 
 #error {
@@ -49,7 +48,7 @@ body {
   color: #ff4d6d;
 }
 
-/* ================= CARD (STAGE ONE) ================= */
+/* ================= STAGE ONE ================= */
 .card {
   background: white;
   max-width: 520px;
@@ -70,7 +69,6 @@ body {
   font-weight: 400;
 }
 
-/* ================= TEXT ================= */
 .text {
   font-size: 15px;
   color: #555;
@@ -94,7 +92,6 @@ button {
 }
 
 /* ================= MEMORY GRID ================= */
-/* DEFAULT = MOBILE (2 KOLOM) */
 .photos {
   margin-top: 25px;
   display: grid;
@@ -103,7 +100,6 @@ button {
   justify-items: center;
 }
 
-/* FOTO */
 .photos img {
   width: 80px;
   height: 80px;
@@ -111,7 +107,6 @@ button {
   object-fit: cover;
 }
 
-/* CONTAINER MEMORY */
 .memory {
   display: flex;
   flex-direction: column;
@@ -121,13 +116,11 @@ button {
   transition: all 1.5s ease;
 }
 
-/* MEMORY MUNCUL */
 .memory.show {
   opacity: 1;
   transform: scale(1);
 }
 
-/* CAPTION */
 .photos figcaption {
   font-size: 12px;
   color: #ff6fae;
@@ -142,27 +135,16 @@ button {
   opacity: 1;
 }
 
-/* HIDDEN STATE (AMAN UNTUK ANIMASI) */
+/* Hidden for MEMORY only */
 .hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-/* ================= DESKTOP MEMORY (3 KOLOM) ================= */
+/* Desktop grid */
 @media (min-width: 768px) {
   .photos {
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  .photos img {
-    width: 90px;
-    height: 90px;
-  }
-
-  .photos figcaption {
-    font-size: 13px;
-    max-width: 100px;
   }
 }
 
@@ -181,9 +163,13 @@ button {
   z-index: 10;
 }
 
+/* IMPORTANT: STAGE TWO REALLY HIDDEN */
+.stage-two.hidden {
+  display: none;
+}
+
 .stage-two h1 {
   color: #ff6fae;
-  margin-bottom: 20px;
 }
 
 .stage-two p {
@@ -192,7 +178,7 @@ button {
   max-width: 420px;
 }
 
-/* ================= ANIMATIONS ================= */
+/* ================= ANIMATION ================= */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

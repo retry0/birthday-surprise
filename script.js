@@ -1,4 +1,4 @@
-/* PASSWORD */
+/* ================= PASSWORD ================= */
 function checkPassword() {
     const input = document.getElementById("password").value;
     const birthday = "19121997"; // 🔁 GANTI
@@ -10,7 +10,7 @@ function checkPassword() {
     }
 }
 
-/* TYPING */
+/* ================= TYPING ================= */
 const message = `
 Di hari istimewa ini,
 aku ingin kamu tahu satu hal…
@@ -41,7 +41,7 @@ function typeEffect() {
     }
 }
 
-/* MEMORY + DELAY */
+/* ================= MEMORY + DELAY ================= */
 function revealMemories() {
     const items = document.querySelectorAll(".memory");
     let index = 0;
@@ -53,19 +53,17 @@ function revealMemories() {
             index++;
         } else {
             clearInterval(interval);
-
-            // ⏳ Delay emosional sebelum stage two
-            setTimeout(showStageTwo, 3000);
+            setTimeout(showStageTwo, 3000); // ⏳ delay emosional
         }
     }, 2500);
 }
 
-/* STAGE TWO */
+/* ================= STAGE TWO ================= */
 function showStageTwo() {
     document.getElementById("stageTwo").classList.remove("hidden");
 }
 
-/* START */
+/* ================= START ================= */
 document.addEventListener("DOMContentLoaded", () => {
     const startBtn = document.getElementById("startBtn");
     const music = document.getElementById("music");
@@ -79,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/* HEART */
+/* ================= HEART ================= */
 function showLove() {
     for (let i = 0; i < 25; i++) {
         const heart = document.createElement("div");
