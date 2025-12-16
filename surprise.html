@@ -13,20 +13,46 @@
   <source src="assets/music.mp3">
 </audio>
 
-<!-- ================= STAGE ONE ================= -->
+<!-- STAGE ONE -->
 <div class="card">
   <button id="startBtn">Mulai Surprise 💖</button>
-
   <h1>Happy Birthday 🎂</h1>
   <h2>My Favorite Person 💕</h2>
-
   <p class="text" id="typing"></p>
-
-  <button onclick="showLove()">I Love You 💘</button>
 </div>
 
-<!-- ================= STAGE TWO ================= -->
-<div id="stageTwo" class="stage-two hidden">
+<!-- MEMORY DATA (DATA ONLY) -->
+<div class="memories">
+  <figure data-caption="Hari kita makan sushi, maaf belum bisa makan kappa sushi :) 💕">
+    <img src="assets/1.jpg">
+  </figure>
+  <figure data-caption="Salah satu momen paling aku ingat 🥰 dan mengenalkan kamu ke keluarga">
+    <img src="assets/2.jpg">
+  </figure>
+  <figure data-caption="Senyum favoritku ✨">
+    <img src="assets/3.jpg">
+  </figure>
+  <figure data-caption="Hari yang tidak akan kulupa 💖">
+    <img src="assets/4.jpg">
+  </figure>
+  <figure data-caption="Salah satu moment yang lucu ✨">
+    <img src="assets/5.jpg">
+  </figure>
+</div>
+
+<!-- MEMORY VIEWER -->
+<div id="memoryViewer" class="memory-viewer hidden">
+  <div class="memory-backdrop"></div>
+
+  <div class="memory-card">
+    <img id="memoryImg">
+  </div>
+
+  <p id="memoryCaption"></p>
+</div>
+
+<!-- PAGE TWO -->
+<div id="pageTwo" class="page-two hidden">
   <h1>💖 One More Thing…</h1>
   <p>
     Terima kasih sudah menjadi bagian terindah  
@@ -34,37 +60,6 @@
     Semoga kita bisa terus berjalan bersama  
     hari demi hari 💍
   </p>
-  <button onclick="showLove()">Aku Sayang Kamu 💘</button>
-</div>
-
-<!-- ================= MEMORY DATA (HIDDEN) ================= -->
-<div class="memories hidden">
-  <figure class="memory">
-    <img src="assets/1.jpg">
-      <figcaption>Hari kita makan sushi, maaf belum bisa makan kappa sushi :) 💕</figcaption>
-  </figure>
-  <figure class="memory">
-    <img src="assets/2.jpg">
-      <figcaption>Salah satu momen paling aku ingat 🥰 dan mengenalkan kamu ke keluarga</figcaption>
-  </figure>
-  <figure class="memory">
-    <img src="assets/3.jpg">
-    <figcaption>Senyum favoritku ✨</figcaption>
-  </figure>
-  <figure class="memory">
-    <img src="assets/4.jpg">
-    <figcaption>Hari yang tidak akan kulupa 💖</figcaption>
-  </figure>
-  <figure class="memory">
-    <img src="assets/5.jpg">
-      <figcaption>Salah satu moment yang lucu ✨</figcaption>
-  </figure>
-</div>
-
-<!-- ================= FULLSCREEN FRAME VIEW ================= -->
-<div id="photoViewer" class="photo-viewer hidden">
-  <img id="viewerImg" alt="memory">
-  <p id="viewerCaption"></p>
 </div>
 
 <script src="script.js"></script>

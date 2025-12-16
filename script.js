@@ -1,7 +1,6 @@
-/* ================= PASSWORD ================= */
 function checkPassword() {
     const input = document.getElementById("password").value;
-    const birthday = "19121997"; // 🔁 GANTI
+    const birthday = "19121997"; // GANTI
 
     if (input === birthday) {
         window.location.href = "surprise.html";
@@ -10,7 +9,7 @@ function checkPassword() {
     }
 }
 
-/* ================= TYPING ================= */
+/* TYPING */
 const message = `
 Di hari istimewa ini,
 aku ingin kamu tahu satu hal…
@@ -18,12 +17,8 @@ aku ingin kamu tahu satu hal…
 Kamu adalah alasan
 senyumku setiap hari 💕
 
-Terima kasih sudah hadir,
-mencintai, dan menemani aku.
-
 Aku mencintaimu,
-hari ini, esok,
-dan selamanya 💖
+hari ini dan seterusnya 💖
 `;
 
 let i = 0;
@@ -37,28 +32,32 @@ function typeEffect() {
         i++;
         setTimeout(typeEffect, 60);
     } else {
-        playMemories();
+        playMemoriesAuto();
     }
 }
 
-/* ================= MEMORY FRAME FULLSCREEN ================= */
-function playMemories() {
-    const memories = document.querySelectorAll(".memory");
-    const viewer = document.getElementById("photoViewer");
-    const img = document.getElementById("viewerImg");
-    const caption = document.getElementById("viewerCaption");
+/* MEMORY AUTO SHOW */
+function playMemoriesAuto() {
+    const memories = document.querySelectorAll(".memories figure");
+    const viewer = document.getElementById("memoryViewer");
+    const img = document.getElementById("memoryImg");
+    const caption = document.getElementById("memoryCaption");
+    const pageTwo = document.getElementById("pageTwo");
 
     let index = 0;
 
     function showNext() {
         if (index >= memories.length) {
-            setTimeout(showStageTwo, 2500);
+            // ⏳ Delay emosional sebelum page two
+            setTimeout(() => {
+                viewer.classList.add("hidden");
+                pageTwo.classList.remove("hidden");
+            }, 2000);
             return;
         }
 
         img.src = memories[index].querySelector("img").src;
-        caption.innerText =
-            memories[index].querySelector("figcaption").innerText;
+        caption.innerText = memories[index].dataset.caption;
 
         viewer.classList.remove("hidden");
 
@@ -66,18 +65,13 @@ function playMemories() {
             viewer.classList.add("hidden");
             index++;
             setTimeout(showNext, 700);
-        }, 2300);
+        }, 2500);
     }
 
     showNext();
 }
 
-/* ================= STAGE TWO ================= */
-function showStageTwo() {
-    document.getElementById("stageTwo").classList.remove("hidden");
-}
-
-/* ================= START ================= */
+/* START */
 document.addEventListener("DOMContentLoaded", () => {
     const startBtn = document.getElementById("startBtn");
     const music = document.getElementById("music");
