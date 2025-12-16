@@ -27,6 +27,7 @@ dan selamanya 💖
 `;
 
 let i = 0;
+
 function typeEffect() {
     const el = document.getElementById("typing");
     if (!el) return;
@@ -40,24 +41,26 @@ function typeEffect() {
     }
 }
 
-/* MEMORY */
+/* MEMORY + DELAY */
 function revealMemories() {
     const items = document.querySelectorAll(".memory");
     let index = 0;
 
     const interval = setInterval(() => {
         if (index < items.length) {
-            items[index].classList.remove("hidden");
             items[index].classList.add("show");
+            items[index].classList.remove("hidden");
             index++;
         } else {
             clearInterval(interval);
-            setTimeout(showStageTwo, 1500);
+
+            // ⏳ Delay emosional sebelum stage two
+            setTimeout(showStageTwo, 3000);
         }
     }, 2500);
 }
 
-/* STAGE 2 */
+/* STAGE TWO */
 function showStageTwo() {
     document.getElementById("stageTwo").classList.remove("hidden");
 }

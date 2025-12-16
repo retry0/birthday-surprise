@@ -18,13 +18,11 @@ body {
   border-radius: 25px;
   text-align: center;
   box-shadow: 0 20px 40px rgba(255,105,180,0.25);
-  max-width: 380px;
   width: 90%;
+  max-width: 380px;
 }
 
-.lock-box h1 {
-  color: #ff6fae;
-}
+.lock-box h1 { color: #ff6fae; }
 
 .lock-box input {
   width: 100%;
@@ -86,9 +84,7 @@ button {
   margin: 10px 0;
 }
 
-#startBtn {
-  background: #ff6fae;
-}
+#startBtn { background: #ff6fae; }
 
 /* MEMORY */
 .photos {
@@ -128,8 +124,10 @@ button {
   opacity: 1;
 }
 
+/* IMPORTANT: NO display:none */
 .hidden {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* STAGE TWO */
@@ -146,9 +144,7 @@ button {
   animation: fadeIn 2s ease;
 }
 
-.stage-two h1 {
-  color: #ff6fae;
-}
+.stage-two h1 { color: #ff6fae; }
 
 .stage-two p {
   color: #555;
