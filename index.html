@@ -12,15 +12,21 @@
 </head>
 <body class="lock-page modern">
 
+  <!-- MUSIC -->
+  <audio id="introMusic" loop>
+    <source src="assets/Hindia.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="login-wrapper">
+    <div class="login-card romantic">
 
-    <div class="login-card">
-      <span class="badge">💌 Private</span>
+      <span class="badge">💌 Only For You</span>
 
-      <h1>For Someone Special</h1>
+      <h1>Someone Special</h1>
       <p class="subtitle">
-        Ada sesuatu yang aku siapkan  
-        khusus untukmu ✨
+        Ada satu kejutan kecil  
+        yang aku simpan khusus  
+        untukmu 💗
       </p>
 
       <div class="input-group">
@@ -28,20 +34,42 @@
           type="password"
           id="password"
           placeholder="Tanggal lahir (DDMMYYYY)"
+          onfocus="playMusic()"
         />
       </div>
 
-      <button class="primary-btn" onclick="checkPassword()">
+      <button class="primary-btn" onclick="handleOpen()">
         Buka Surprise 💖
       </button>
 
       <p id="error" class="error-text">
         Password salah, coba lagi ya 💔
       </p>
-    </div>
 
+      <div class="footer-note">
+        with love ✨
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
+
+  <script>
+    const music = document.getElementById("introMusic");
+    let played = false;
+
+    function playMusic() {
+      if (!played) {
+        music.volume = 0.6;
+        music.play();
+        played = true;
+      }
+    }
+
+    function handleOpen() {
+      playMusic();
+      checkPassword();
+    }
+  </script>
 </body>
 </html>
