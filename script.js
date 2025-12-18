@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = document.querySelector(".login-card");
     const music = document.getElementById("introMusic");
 
-    const correctPassword = "14021998"; // 🔐 GANTI
+    const correctPassword = "19121997"; // 🔐 GANTI
 
     let musicPlayed = false;
 
