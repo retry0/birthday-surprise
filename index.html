@@ -5,25 +5,9 @@
   <title>For You 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-  function createSparkle() {
-    const sparkle = document.createElement("div");
-    sparkle.className = "sparkle";
-    sparkle.style.left = Math.random() * 100 + "vw";
-    sparkle.style.top = Math.random() * 100 + "vh";
-    sparkle.style.animationDuration = 3 + Math.random() * 2 + "s";
-    document.body.appendChild(sparkle);
-
-    setTimeout(() => sparkle.remove(), 5000);
-  }
-
-  setInterval(createSparkle, 600);
-</script>
 <body class="lock-page modern">
 
   <!-- MUSIC -->
@@ -38,9 +22,8 @@
 
       <h1>Someone Special</h1>
       <p class="subtitle">
-        Ada satu kejutan kecil  
-        yang aku simpan khusus  
-        untukmu 💗
+        Ada sesuatu yang aku siapkan  
+        khusus untukmu ✨
       </p>
 
       <div class="input-group">
@@ -48,11 +31,10 @@
           type="password"
           id="password"
           placeholder="Tanggal lahir (DDMMYYYY)"
-          onfocus="playMusic()"
         />
       </div>
 
-      <button class="primary-btn" onclick="handleOpen()">
+      <button id="openBtn" class="primary-btn">
         Buka Surprise 💖
       </button>
 
@@ -63,38 +45,11 @@
       <div class="footer-note">
         with love ✨
       </div>
+
     </div>
   </div>
 
+  <!-- SCRIPT -->
   <script src="script.js"></script>
-
- <script>
-  const music = document.getElementById("introMusic");
-  let played = false;
-
-  function playMusic() {
-    if (played) return;
-    played = true;
-
-    music.volume = 0;
-    music.play();
-
-    let vol = 0;
-    const fade = setInterval(() => {
-      if (vol < 0.6) {
-        vol += 0.02;
-        music.volume = vol;
-      } else {
-        clearInterval(fade);
-      }
-    }, 120);
-  }
-
-  function handleOpen() {
-    playMusic();
-    checkPassword();
-  }
-</script>
-
 </body>
 </html>
