@@ -5,22 +5,28 @@
   <title>For You 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Main Style -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="lock-page modern">
 
-  <!-- MUSIC -->
+  <!-- 🎵 INTRO MUSIC (FADE-IN VIA JS) -->
   <audio id="introMusic" loop>
     <source src="assets/Hindia.mp3" type="audio/mpeg">
   </audio>
 
+  <!-- ================= LOGIN CARD ================= -->
   <div class="login-wrapper">
     <div class="login-card romantic">
 
       <span class="badge">💌 Only For You</span>
 
       <h1>Someone Special</h1>
+
       <p class="subtitle">
         Ada sesuatu yang aku siapkan  
         khusus untukmu ✨
@@ -31,6 +37,7 @@
           type="password"
           id="password"
           placeholder="Tanggal lahir (DDMMYYYY)"
+          autocomplete="off"
         />
       </div>
 
@@ -49,7 +56,8 @@
     </div>
   </div>
 
-  <!-- SCRIPT -->
+  <!-- ================= SCRIPT ================= -->
   <script src="script.js"></script>
+
 </body>
 </html>

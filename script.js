@@ -193,3 +193,71 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = document.getElementById("openBtn");
+    const input = document.getElementById("password");
+    const error = document.getElementById("error");
+    const card = document.querySelector(".login-card");
+    const music = document.getElementById("introMusic");
+
+    const correctPassword = "19121997"; // 🔐 GANTI
+
+    let musicPlayed = false;
+
+    /* 🎶 Fade-in Music */
+    function playMusic() {
+        if (!music || musicPlayed) return;
+        musicPlayed = true;
+
+        music.volume = 0;
+        music.play();
+
+        let vol = 0;
+        const fade = setInterval(() => {
+            if (vol < 0.6) {
+                vol += 0.02;
+                music.volume = vol;
+            } else {
+                clearInterval(fade);
+            }
+        }, 120);
+    }
+
+    /* 🔐 CHECK PASSWORD */
+    function checkPassword() {
+        error.style.display = "none";
+        card.classList.remove("shake");
+
+        if (input.value === correctPassword) {
+            // 💖 success
+            setTimeout(() => {
+                window.location.href = "surprise.html";
+            }, 500);
+        } else {
+            // 💔 error
+            error.style.display = "block";
+            card.classList.add("shake");
+
+            setTimeout(() => {
+                card.classList.remove("shake");
+            }, 400);
+
+            input.value = "";
+            input.focus();
+        }
+    }
+
+    /* BUTTON CLICK */
+    openBtn.addEventListener("click", () => {
+        playMusic();
+        checkPassword();
+    });
+
+    /* ENTER KEY */
+    input.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            playMusic();
+            checkPassword();
+        }
+    });
+});
