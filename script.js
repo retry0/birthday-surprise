@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = document.querySelector(".login-card");
     const music = document.getElementById("introMusic");
 
-    const correctPassword = "19121997"; // 🔐 GANTI
+    const correctPasswords = "19121997"; // 🔐 GANTI
 
     let musicPlayed = false;
 
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* 🔐 CHECK PASSWORD */
     function checkPassword() {
-        if (input.value === correctPassword) {
+        if (input.value === correctPasswords) {
             // success → redirect
             setTimeout(() => {
                 window.location.href = "surprise.html";
