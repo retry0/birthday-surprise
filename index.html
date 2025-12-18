@@ -2,21 +2,46 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Private Love 💌</title>
+  <title>For You 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="lock-page">
+<body class="lock-page modern">
 
-<div class="lock-box">
-  <h1>💗 Private Page</h1>
-  <p>Masukkan tanggal lahir kamu</p>
+  <div class="login-wrapper">
 
-  <input type="password" id="password" placeholder="DDMMYYYY">
-  <button onclick="checkPassword()">Buka Surprise 💕</button>
-  <span id="error">Password salah 💔</span>
-</div>
+    <div class="login-card">
+      <span class="badge">💌 Private</span>
 
-<script src="script.js"></script>
+      <h1>For Someone Special</h1>
+      <p class="subtitle">
+        Ada sesuatu yang aku siapkan  
+        khusus untukmu ✨
+      </p>
+
+      <div class="input-group">
+        <input
+          type="password"
+          id="password"
+          placeholder="Tanggal lahir (DDMMYYYY)"
+        />
+      </div>
+
+      <button class="primary-btn" onclick="checkPassword()">
+        Buka Surprise 💖
+      </button>
+
+      <p id="error" class="error-text">
+        Password salah, coba lagi ya 💔
+      </p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
