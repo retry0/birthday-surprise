@@ -1,3 +1,38 @@
+/* ================= CHECK PASSWORD ================= */
+function checkPassword() {
+    const input = document.getElementById("password");
+    const error = document.getElementById("error");
+    const card = document.querySelector(".login-card");
+
+    // 🔐 GANTI TANGGAL LAHIR DI SINI
+    const correctPassword = "19121997"; // DDMMYYYY
+
+    if (!input) return;
+
+    if (input.value === correctPassword) {
+        // Optional: small delay biar elegan
+        setTimeout(() => {
+            window.location.href = "surprise.html";
+        }, 500);
+    } else {
+        // Tampilkan error
+        error.style.display = "block";
+
+        // Shake card
+        card.classList.add("shake");
+
+        // Hapus shake setelah animasi
+        setTimeout(() => {
+            card.classList.remove("shake");
+        }, 500);
+
+        // Clear input (optional)
+        input.value = "";
+        input.focus();
+    }
+}
+
+
 /* ================= FADE-IN MUSIC ================= */
 function playSurpriseMusic() {
     const music = document.getElementById("music");
