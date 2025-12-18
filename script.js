@@ -5,7 +5,15 @@ function checkPassword() {
     if (input === birthday) {
         window.location.href = "surprise.html";
     } else {
-        document.getElementById("error").style.display = "block";
+        const card = document.querySelector(".login-card");
+        const error = document.getElementById("error");
+
+        error.style.display = "block";
+        card.classList.add("shake");
+
+        setTimeout(() => {
+            card.classList.remove("shake");
+        }, 500);
     }
 }
 
